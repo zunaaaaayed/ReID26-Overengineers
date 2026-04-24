@@ -1,0 +1,24 @@
+Peyman (Score: 0.12039)
+- Fair A/B comparisons
+- Default k-reciprocal re-ranking post-processing [performs good]
+- Per-class reciprocal re-ranking (explore class structure in retrieval space) [good]
+- DINOv2 | Class filtering during post-processing, inverse super-category CE weighting + category-based PK sampling)
+- Train different images in different aspect ratio
+
+Aymen (Score: 0.13553)
+- ViT-base/16, 86M, ImageNet-1k, merge UrbAM data and train for 30 epochs
+- PAT Loss, LR Scheduler barely decayed, grayscale aug. (by LGT) destroyed color. Fix. Color jitter, random patch
+- Failed approaches: CLS token fusion, direction embedding
+- Best yet: ViT large has 24 blocks. Concatenate the CLS token from the last 2 blocks 2046 dim descriptor. N=2 is the sweet spot.
+
+Emre (Score: 0.10949)
+- Offline ESRGAN, model-centric improvements
+Narmeen (Score: 0.11947)
+- Query expansion (didn’t help much)
+- Camera-aware Jaccard re-ranking [helped]
+
+Mohsin (Score: 0.13361)
+-  K1 = 20 and K2 = 6 lambda=0.3 with ViT Large with 256x128, 60 epochs
+- Class Group filtering (merge container U rubbish bin) is their best approach
+
+All of them used `Annotations\UAM` data as `UAM_Unified`.

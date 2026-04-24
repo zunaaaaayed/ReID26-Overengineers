@@ -1,6 +1,13 @@
 # Others
-Z-Instructions
-
+.claude/
+.idea/
+Part-Aware-Transformer/
+pretrained_models/
+UAM/
+Urban2026/
+URVAM-ReID2026/
+graphify-out/
+CLAUDE.md
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
